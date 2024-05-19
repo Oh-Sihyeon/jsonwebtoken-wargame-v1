@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+      <div class="container">
+          <h2 class="form-signin-heading text-center mb-5">HAF_Wargame using JWT</h2>
+          {% if user %}
+          <br>
+          <h3 class="overview-normalize">환영합니다, {{ user.username }}님!</h3>
+          <hr/>
+          <h3 class="overview-normalize">ID</h3>
+          <p>
+              {{ user.userid }}
+          </p>
+          <hr/>
+          <h3 class="overview-normalize">PROFILE</h3>
+              {% if user.level === "userlevel" %}
+              <button onclick="location.href='/userprofile'" class="btn btn-sm btn-success">프로필</button>
+              <hr/>
+              {% else %}
+              <button onclick="location.href='/adminprofile'" class="btn btn-sm btn-info">프로필</button>
+              <hr/>
+          {% endif %}
+          <button class="btn btn-sm btn-danger btn-block" type="submit" onclick="logOut()">로그아웃</button>
+          {% else %}
+          <button class="btn btn-sm btn-success btn-block" type="submit" onclick="logIn()">로그인 하기</button>
+          {% endif %}
+      </div>
+
+      <script>
+            function logOut() {
+                location.href = '/logout';
+            }
+            function logIn() {
+                location.href = '/login';
+            }
+      </script>
+</body>
+</html>
