@@ -8,7 +8,19 @@
     <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
-    <h2 style="text-align: center;">사용자 정보</h2>
-    <hr/>
+    <div class="container">
+        <h2 class="form-signin-heading text-center mb-5">사용자 정보</h2>
+        <hr/>
+        <h3 class="overview-normalize">NAME</h3>
+            <p>
+                {{ user.username }}
+            </p>
+        <hr/>
+        <h3 class="overview-normalize">ID</h3>
+            <p>
+                {{ user.userid }}
+            </p>
+        <hr/>
+    </div>
 </body>
 </html>

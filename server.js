@@ -29,7 +29,8 @@ app.get('/login', (req, res) => {
 });
 //사용자 프로필 페이지
 app.get('/userprofile', isAuthenticated, (req, res) => {
-    res.render('userprofile.html');
+    const { user } = req;
+    res.render('userprofile.html', { user });
 });
 //관리자 프로필 페이지
 app.get('/adminprofile', isAuthenticated, isAdmin, (req, res) => {
