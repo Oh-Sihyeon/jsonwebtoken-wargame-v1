@@ -49,7 +49,7 @@ app.post('/login', (req, res) => {
     }
 
     try {
-        if (!authenticatedUser) throw new Error('일치하는 아이디가 존재하지 않음');
+        if (!authenticatedUser) throw new Error('Matching ID does not exist');
 
         // payload 설정
         const payload = {
@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
         
     } catch(err) {
         console.log(err)
-        res.send('로그인 실패')
+        res.send('Login failed')
     }
 });
 
