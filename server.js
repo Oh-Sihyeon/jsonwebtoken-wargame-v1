@@ -81,6 +81,6 @@ app.get('/logout', (req, res)=>{
 })
 
 // 서버 리스닝
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(1102, () => {
+    console.log('Server is running on port 1102');
 });
