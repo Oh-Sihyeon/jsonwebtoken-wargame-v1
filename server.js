@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
         
     } catch(err) {
         console.log(err)
-        res.send('Login failed')
+        res.render('loginfail.html')
     }
 });
 

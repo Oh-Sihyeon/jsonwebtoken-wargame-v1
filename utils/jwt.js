@@ -1,7 +1,7 @@
 const crypto = require('crypto')
 const salt = 'ingoo'
  
-function createToken(state, expiresIn = '5m') { // 기본값을 '5m'로
+function createToken(state, expiresIn = '2h') { // 기본값을 '2h'로
     const header = {
         typ: 'JWT',
         alg: 'HS256'
